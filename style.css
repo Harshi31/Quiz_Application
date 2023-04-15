@@ -40,5 +40,9 @@
 .result.incorrect {
   color: red;
 }
+/*   "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  }, */
 /* "start": "node index.js", */
 /* add it in package.json */
