@@ -4,7 +4,10 @@ const question = document.querySelector(".question");
 const optionContainer = document.querySelectorAll(".options li");
 const submitBtn = document.querySelector(".submit");
 const result = document.querySelector(".result");
+const submitNow = document.querySelector(".submitNow");
 
+let userCorrectAnswer = 0,
+  userWrongAnswer = 0;
 let questionsData = []; // to store fetched questions data
 let currentQuestionIndex = 0;
 
@@ -48,10 +51,9 @@ const showQuestion = (questionIndex) => {
 // handle option button click
 const handleOptionClick = (event) => {
   // remove active class from all options
-  optionContainer.forEach((option) => {
-    option.querySelectorAll(".option").forEach((button) => {
-      button.classList.remove("active");
-    });
+
+  document.querySelectorAll(".option").forEach((option) => {
+    option.classList.remove("active");
   });
 
   // add active class to the clicked option
@@ -61,6 +63,12 @@ const handleOptionClick = (event) => {
 
 // handle form submission
 const handleFormSubmit = (event) => {
+  //Adding animation when clicking btn
+  submitBtn.classList.add("animate");
+  setTimeout(() => {
+    submitBtn.classList.remove("animate");
+  }, 600);
+
   event.preventDefault();
   const userAnswer = document.querySelector(".option.active");
   if (!userAnswer) {
@@ -74,20 +82,20 @@ const handleFormSubmit = (event) => {
   console.log(userAnswerText);
   console.log(correctAnswerText);
   if (userAnswerText === correctAnswerText) {
-    result.innerHTML = "Correct!";
+    userCorrectAnswer++;
   } else {
-    result.innerHTML = `Incorrect! The correct answer is ${questionsData[currentQuestionIndex].answer}`;
+    userWrongAnswer++;
   }
+  currentQuestionIndex++;
   // move to the next question after 3 second
   setTimeout(() => {
-    currentQuestionIndex++;
     if (currentQuestionIndex >= questionsData.length) {
-      result.innerHTML = `Quiz Completed! You scored ${currentQuestionIndex} out of ${questionsData.length}`;
+      result.innerHTML = `Quiz Completed! You scored ${userCorrectAnswer} out of ${questionsData.length}`;
     } else {
       showQuestion(currentQuestionIndex);
       result.innerHTML = "";
     }
-  }, 3000);
+  }, 1000);
 };
 
 // add event listeners
@@ -96,5 +104,30 @@ optionContainer.forEach((option) => {
 });
 submitBtn.addEventListener("click", handleFormSubmit);
 
+//Submit Now
+submitNow.addEventListener("click", (e) => {
+  e.preventDefault();
+  submitNow.classList.add("animate");
+  setTimeout(() => {
+    submitNow.classList.remove("animate");
+  }, 600);
+  setTimeout(() => {
+    const quizContainer = document.querySelector(".center");
+    if (currentQuestionIndex > 0) {
+      const html = `<h1>Congratulation!<br> You've completed the Quiz</h1>
+  <h3>You've scored ${userCorrectAnswer} out of ${currentQuestionIndex}</h3>`;
+      quizContainer.innerHTML = html;
+    } else {
+      alert(`You've not attend any question`);
+      const html = `<h1>Congratulation!<br> You've completed the Quiz</h1>
+    <h3>But You've not attended any questions.</h3><h4>See you soon 😊👋</h4>`;
+
+      quizContainer.innerHTML = html;
+    }
+  }, 400);
+});
+
 // fetch questions on page load
 fetchQuestions();
+
+//Adding animation

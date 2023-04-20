@@ -1,9 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 .quiz-container {
-  max-width: 500px;
-  margin: 0 auto;
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
 }
 
 .options {
@@ -40,9 +55,4 @@
 .result.incorrect {
   color: red;
 }
-/*   "main": "index.js",
-  "engines": {
-    "node": "14.x"
-  }, */
-/* "start": "node index.js", */
-/* add it in package.json */
+
