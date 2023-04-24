@@ -14,10 +14,10 @@ let currentQuestionIndex = 0;
 // fetch questions data from API
 const fetchQuestions = async () => {
   try {
-    const response = await fetch("http://localhost:2000/cloudQuestions");
-    // const response = await fetch(
-    //   "https://question-answer-eight.vercel.app/database-questions"
-    // );
+    // const response = await fetch("http://localhost:2000/cloudQuestions");
+    const response = await fetch(
+      "https://cloud-server-ten.vercel.app/cloudQuestions"
+    );
     if (!response.ok) {
       throw new Error("API request failed!");
     }

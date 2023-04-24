@@ -14,10 +14,10 @@ let currentQuestionIndex = 0;
 // fetch questions data from API
 const fetchQuestions = async () => {
   try {
-    const response = await fetch("http://localhost:1000/AIQuestions");
-    // const response = await fetch(
-    //   "https://question-answer-eight.vercel.app/database-questions"
-    // );
+    // const response = await fetch("http://localhost:1000/AIQuestions");
+    const response = await fetch(
+      "https://ai-server-ten.vercel.app/aiquestions"
+    );
     if (!response.ok) {
       throw new Error("API request failed!");
     }
