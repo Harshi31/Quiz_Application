@@ -1,10 +1,4 @@
-'use strict';
-
-
-
-/**
- * add event on element
- */
+"use strict";
 
 const addEventOnElem = function (elem, type, callback) {
   if (elem.length > 1) {
@@ -14,9 +8,7 @@ const addEventOnElem = function (elem, type, callback) {
   } else {
     elem.addEventListener(type, callback);
   }
-}
-
-
+};
 
 /**
  * navbar toggle
@@ -30,18 +22,16 @@ const overlay = document.querySelector("[data-overlay]");
 const toggleNavbar = function () {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
-}
+};
 
 addEventOnElem(navTogglers, "click", toggleNavbar);
 
 const closeNavbar = function () {
   navbar.classList.remove("active");
   overlay.classList.remove("active");
-}
+};
 
 addEventOnElem(navLinks, "click", closeNavbar);
-
-
 
 /**
  * header active when scroll down to 100px
@@ -58,6 +48,16 @@ const activeElem = function () {
     header.classList.remove("active");
     backTopBtn.classList.remove("active");
   }
-}
+};
 
 addEventOnElem(window, "scroll", activeElem);
+
+/* Moving the bar */
+const courses = document.querySelector("#courses_all");
+const tryForFreeBtn = document.querySelectorAll(".has-before");
+for (let i = 0; i < 2; i++) {
+  tryForFreeBtn[i].addEventListener("click", (e) => {
+    e.preventDefault();
+    courses.scrollIntoView();
+  });
+}
