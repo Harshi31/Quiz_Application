@@ -14,7 +14,7 @@ let currentQuestionIndex = 0;
 // fetch questions data from API
 const fetchQuestions = async () => {
   try {
-    const response = await fetch("http://localhost:3000/database-questions");
+    const response = await fetch("http://localhost:3000/questions");
     // const response = await fetch(
     //   "https://question-answer-eight.vercel.app/database-questions"
     // );
@@ -128,6 +128,8 @@ submitNow.addEventListener("click", (e) => {
 });
 
 // fetch questions on page load
-fetchQuestions();
+// fetchQuestions();
+
+//updating
 
 //Adding animation

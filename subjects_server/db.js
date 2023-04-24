@@ -152,7 +152,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/database-questions", (req, res) => {
+app.get("/databaseQuestions", (req, res) => {
   res.send(databaseQuestions);
 });
 
