@@ -141,6 +141,7 @@ const databaseQuestions = [
       "To create a virtual table that can be used in place of a regular table",
   },
 ];
+
 // Add the CORS headers
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
