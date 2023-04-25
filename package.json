@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js",
+    "start": "concurrently \"node subjects_server/ai.js\" \"node subjects_server/cloud.js\" \"node subjects_server/db.js\" \"node subjects_server/python.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
