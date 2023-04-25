@@ -6,6 +6,9 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  background: deepskyblue;
+}
 .quiz-container {
   text-align: center;
   font-size: 1.2rem;
@@ -15,7 +18,7 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
@@ -56,3 +59,6 @@
   color: red;
 }
 
+li {
+  margin: 11px auto;
+}
