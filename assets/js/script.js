@@ -61,3 +61,11 @@ for (let i = 0; i < 2; i++) {
     courses.scrollIntoView();
   });
 }
+
+// Subscription Form
+const subscribe = document.querySelector(".subscribe-form");
+const subsThank = document.querySelector(".subs-thanks");
+subscribe.addEventListener("click", (e) => {
+  e.preventDefault();
+  subsThank.innerHTML = `ThankYou`;
+});
