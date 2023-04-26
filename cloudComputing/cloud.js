@@ -110,7 +110,7 @@ submitNow.addEventListener("click", (e) => {
   submitNow.classList.add("animate");
   setTimeout(() => {
     submitNow.classList.remove("animate");
-  }, 600);
+  }, 6000);
   setTimeout(() => {
     const quizContainer = document.querySelector(".center");
     if (currentQuestionIndex > 0) {
@@ -124,10 +124,18 @@ submitNow.addEventListener("click", (e) => {
 
       quizContainer.innerHTML = html;
     }
-  }, 400);
+  }, 4000);
 });
 
 // fetch questions on page load
 fetchQuestions();
 
-//Adding animation
+//Additional functinalities
+const backBtn = document.querySelector(".backBtn");
+backBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  backBtn.classList.add("animate");
+  setTimeout(() => {
+    backBtn.classList.remove("animate");
+  }, 500);
+});

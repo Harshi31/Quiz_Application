@@ -62,3 +62,8 @@ body {
 li {
   margin: 11px auto;
 }
+
+.back {
+  display: flex;
+  align-items: center;
+}
