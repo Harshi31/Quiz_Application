@@ -122,6 +122,76 @@ const pythonQuestions = [
     options: ["[0, 1, 2, 3, 4]", "[0, 2, 4]", "[2, 4]", "None of the above"],
     answer: "[0, 2, 4]",
   },
+  {
+    question:
+      "What is the output of the following Python code?\nprint('Hello, world!'[7:])",
+    options: ["Hello, world!", "world!", "Hello", "None of the above"],
+    answer: "world!",
+  },
+  {
+    question:
+      "What is the output of the following Python code?\ndef my_func(x, y=3):\n return x + y\nprint(my_func(2))",
+    options: ["2", "3", "5", "None of the above"],
+    answer: "5",
+  },
+  {
+    question:
+      "What is the output of the following Python code?\ndef my_func(x, y):\n return x / y\nprint(my_func(10, 0))",
+    options: ["10", "0", "None", "None of the above"],
+    answer: "None",
+  },
+  {
+    question:
+      "What is the output of the following Python code?\ndef my_func(x, y):\n return x / y\nprint(my_func(10, 2))",
+    options: ["5", "2.5", "0.5", "None of the above"],
+    answer: "5.0",
+  },
+  {
+    question:
+      "What is the output of the following Python code?\ndef my_func(x, y):\n return x * y\nprint(my_func('a', 3))",
+    options: ["'aaa'", "3a", "TypeError", "None of the above"],
+    answer: "aaa",
+  },
+  {
+    question:
+      "What is the output of the following Python code?\nmy_list = [1, 2, 3]\nmy_list.append(4)\nprint(my_list)",
+    options: ["[1, 2, 3]", "[1, 2, 3, 4]", "4", "None of the above"],
+    answer: "[1, 2, 3, 4]",
+  },
+  {
+    question:
+      "What is the output of the following Python code?\ndef my_func(x, y):\n return x ** y\nprint(my_func(2, 3))",
+    options: ["5", "6", "8", "None of the above"],
+    answer: "8",
+  },
+  {
+    question:
+      "What is the output of the following Python code?\nmy_set = {1, 2, 3, 4, 5}\nmy_set.discard(2)\nprint(my_set)",
+    options: [
+      "{1, 2, 3, 4, 5}",
+      "{1, 3, 4, 5}",
+      "{2, 3, 4, 5}",
+      "None of the above",
+    ],
+    answer: "{1, 3, 4, 5}",
+  },
+  {
+    question:
+      "What is the output of the following Python code?\ndef my_func(x, y):\n return x + y\nprint(my_func('hello', 'world'))",
+    options: ["helloworld", "hello world", "TypeError", "None of the above"],
+    answer: "helloworld",
+  },
+  {
+    question:
+      "What is the output of the following Python code?\nmy_dict = {'a': 1, 'b': 2, 'c': 3}\nmy_dict.pop('b')\nprint(my_dict)",
+    options: [
+      "{'a': 1, 'b': 2, 'c': 3}",
+      "{'a': 1, 'c': 3}",
+      "{'b': 2}",
+      "None of the above",
+    ],
+    answer: "{'a': 1, 'c': 3}",
+  },
 ];
 
 // Add the CORS headers

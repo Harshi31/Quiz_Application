@@ -11,7 +11,7 @@ let userCorrectAnswer = 0,
 let apiData = [];
 let currentQuestionIndex = 0;
 let questionsData;
-let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+let array = [0];
 let i = 0;
 
 // fetch questions data from API
@@ -31,6 +31,11 @@ const fetchQuestions = async () => {
     console.error(error);
   }
 };
+
+for (let j = 0; j < apiData.length; j++) {
+  array.push[j];
+  console.log(j);
+}
 
 //Displaying Questions
 const displayQuestions = (currentQuestionIndex) => {
@@ -123,7 +128,6 @@ backBtn.addEventListener("click", () => {
 //Record container function
 const recordContainer = function () {
   const recordData = document.querySelectorAll(".record-data");
-  recordContainer;
   recordData[0].innerHTML = `${currentQuestionIndex + 1}`;
   recordData[1].innerHTML = `${14 - (currentQuestionIndex + 1)}`;
   recordData[2].innerHTML = `14`;

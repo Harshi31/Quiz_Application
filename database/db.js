@@ -11,7 +11,7 @@ let userCorrectAnswer = 0,
 let apiData = [];
 let currentQuestionIndex = 0;
 let questionsData;
-let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+let array = [0];
 let i = 0;
 
 // fetch questions data from API
@@ -31,6 +31,11 @@ const fetchQuestions = async () => {
     console.error(error);
   }
 };
+
+for (let j = 0; j < apiData.length; j++) {
+  array.push[j];
+  console.log(j);
+}
 
 //Displaying Questions
 const displayQuestions = (currentQuestionIndex) => {
@@ -68,16 +73,10 @@ optionContainer.forEach((option) => {
   option.addEventListener("click", handleOptionClick);
 });
 
-// let nextBtnPressCount = 0;
 //next questions:
 const nextBtn = document.querySelector(".submit");
 nextBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  // nextBtnPressCount++;
-
-  if (currentQuestionIndex >= apiData.length) {
-    result.innerHTML = `Quiz Completed! You scored ${userCorrectAnswer} out of ${questionsData.length}`;
-  }
 
   //function for record-container
   recordContainer();
@@ -122,36 +121,29 @@ backBtn.addEventListener("click", () => {
   setTimeout(() => {
     backBtn.classList.remove("animate");
   }, 600);
+  i--;
+  displayQuestions(i);
 });
 
 //Record container function
-/* const recordContainer = function () {
-  const recordData = document.querySelectorAll(".record-data");
-  recordContainer;
-  recordData[0].innerHTML = `${currentQuestionIndex + 1}`;
-  recordData[1].innerHTML = `${14 - (currentQuestionIndex + 1)}`;
-  recordData[2].innerHTML = `14`;
-};
- */
-
 const recordContainer = function () {
   const recordData = document.querySelectorAll(".record-data");
-  recordContainer;
-  recordData[0].innerHTML = `${i + 1}`;
-  recordData[1].innerHTML = `${14 - (i + 1)}`;
+  recordData[0].innerHTML = `${currentQuestionIndex + 1}`;
+  recordData[1].innerHTML = `${14 - (currentQuestionIndex + 1)}`;
   recordData[2].innerHTML = `14`;
 };
 
 //Submit Now
 submitNow.addEventListener("click", (e) => {
   e.preventDefault();
+
   submitNow.classList.add("animate");
   setTimeout(() => {
     submitNow.classList.remove("animate");
   }, 600);
   setTimeout(() => {
     const quizContainer = document.querySelector(".center");
-    if (currentQuestionIndex > 0 && currentQuestionIndex < 13) {
+    if (currentQuestionIndex > 0) {
       const html = `<h1>Congratulation!<br> You've completed the Quiz</h1>
   <h3>You've scored ${userCorrectAnswer} out of ${currentQuestionIndex}</h3>`;
       quizContainer.innerHTML = html;

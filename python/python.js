@@ -11,13 +11,13 @@ let userCorrectAnswer = 0,
 let apiData = [];
 let currentQuestionIndex = 0;
 let questionsData;
-let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+let array = [0];
 let i = 0;
 
 // fetch questions data from API
 const fetchQuestions = async () => {
   try {
-    const response = await fetch("http://localhost:1000/AIQuestions");
+    const response = await fetch("http://localhost:4000/pythonQuestions");
     /*     const response = await fetch(
       "https://question-answer-eight.vercel.app/database-questions"
     ); */
@@ -31,6 +31,11 @@ const fetchQuestions = async () => {
     console.error(error);
   }
 };
+
+for (let j = 0; j < apiData.length; j++) {
+  array.push[j];
+  console.log(j);
+}
 
 //Displaying Questions
 const displayQuestions = (currentQuestionIndex) => {
@@ -72,6 +77,10 @@ optionContainer.forEach((option) => {
 const nextBtn = document.querySelector(".submit");
 nextBtn.addEventListener("click", (event) => {
   event.preventDefault();
+
+  //function for record-container
+  recordContainer();
+
   nextBtn.classList.add("animate");
   setTimeout(() => {
     nextBtn.classList.remove("animate");
@@ -116,9 +125,18 @@ backBtn.addEventListener("click", () => {
   displayQuestions(i);
 });
 
+//Record container function
+const recordContainer = function () {
+  const recordData = document.querySelectorAll(".record-data");
+  recordData[0].innerHTML = `${currentQuestionIndex + 1}`;
+  recordData[1].innerHTML = `${14 - (currentQuestionIndex + 1)}`;
+  recordData[2].innerHTML = `14`;
+};
+
 //Submit Now
 submitNow.addEventListener("click", (e) => {
   e.preventDefault();
+
   submitNow.classList.add("animate");
   setTimeout(() => {
     submitNow.classList.remove("animate");

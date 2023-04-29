@@ -339,6 +339,111 @@ const databaseQuestions = [
     options: ["DELETE", "UPDATE", "INSERT", "CREATE"],
     answer: "INSERT",
   },
+  {
+    question: "What is a foreign key in a database?",
+    options: [
+      "A key used to filter records in a query",
+      "A key used to group related records together",
+      "A key used to link one table to another in a database",
+      "A key used to identify a unique record in a table",
+    ],
+    answer: "A key used to link one table to another in a database",
+  },
+  {
+    question: "What is an index in a database?",
+    options: [
+      "A table that contains a list of primary keys",
+      "A field that is used to group related records together",
+      "A data structure used to improve the performance of database queries",
+      "A table that contains a list of foreign keys",
+    ],
+    answer:
+      "A data structure used to improve the performance of database queries",
+  },
+  {
+    question: "What is a join in SQL?",
+    options: [
+      "A command used to delete data from a database",
+      "A command used to update data in a database",
+      "A command used to combine data from two or more tables",
+      "A command used to create a new table in a database",
+    ],
+    answer: "A command used to combine data from two or more tables",
+  },
+  {
+    question: "What is a stored procedure in a database?",
+    options: [
+      "A function that performs a specific task in a database",
+      "A table that contains a list of primary keys",
+      "A data structure used to store large amounts of data",
+      "A table that contains a list of foreign keys",
+    ],
+    answer: "A function that performs a specific task in a database",
+  },
+  {
+    question: "What is ACID in database management?",
+    options: [
+      "A set of properties that ensure database transactions are processed reliably",
+      "A type of database architecture that is designed to be highly scalable",
+      "A command used to update data in a database",
+      "A data structure used to store large amounts of data",
+    ],
+    answer:
+      "A set of properties that ensure database transactions are processed reliably",
+  },
+  {
+    question: "What is a view in a database?",
+    options: [
+      "A temporary table used for storing data",
+      "A table that is linked to another table in a database",
+      "A stored procedure used for querying data",
+      "A virtual table used for presenting data in a specific way",
+    ],
+    answer: "A virtual table used for presenting data in a specific way",
+  },
+  {
+    question: "What is a trigger in a database?",
+    options: [
+      "A stored procedure used for updating data",
+      "A stored procedure used for querying data",
+      "A program that automatically executes in response to a specific event",
+      "A virtual table used for presenting data in a specific way",
+    ],
+    answer:
+      "A program that automatically executes in response to a specific event",
+  },
+  {
+    question: "What is a transaction in a database?",
+    options: [
+      "A group of SQL statements that are executed together as a single unit",
+      "A table that is linked to another table in a database",
+      "A stored procedure used for querying data",
+      "A temporary table used for storing data",
+    ],
+    answer:
+      "A group of SQL statements that are executed together as a single unit",
+  },
+  {
+    question: "What is a database index?",
+    options: [
+      "A data structure that allows for faster data retrieval in a database",
+      "A table that is linked to another table in a database",
+      "A stored procedure used for updating data",
+      "A virtual table used for presenting data in a specific way",
+    ],
+    answer:
+      "A data structure that allows for faster data retrieval in a database",
+  },
+  {
+    question: "What is a clustered index in a database?",
+    options: [
+      "An index that determines the physical order of data in a table",
+      "An index that contains only unique values",
+      "A table that is linked to another table in a database",
+      "A temporary table used for storing data",
+    ],
+    answer: "An index that determines the physical order of data in a table",
+  },
 ];
 
 // Add the CORS headers
