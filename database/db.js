@@ -40,7 +40,9 @@ for (let j = 0; j < apiData.length; j++) {
 //Displaying Questions
 const displayQuestions = (currentQuestionIndex) => {
   const currentQuestion = apiData[currentQuestionIndex];
-  question.innerHTML = currentQuestion.question;
+  const html = `<span class="mx-4 ml-[-37px]">Question: </span> ${currentQuestion.question}`;
+  question.insertAdjacentHTML("beforeend", html);
+  // question.innerHTML = `Question: ${currentQuestion.question}`;
 
   // clear previous options
   optionContainer.forEach((option) => {
