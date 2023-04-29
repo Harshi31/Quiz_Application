@@ -77,6 +77,72 @@ const AIQuestions = [
     ],
     answer: "A",
   },
+  {
+    question: "What is the Turing test?",
+    options: [
+      "A test to see if a machine can exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human",
+      "A test to determine the speed and efficiency of a computer processor",
+      "A test to evaluate the quality of a machine learning algorithm",
+      "A test to measure the accuracy of a neural network",
+    ],
+    answer:
+      "A test to see if a machine can exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human",
+  },
+  {
+    question: "What is the difference between narrow and general AI?",
+    options: [
+      "Narrow AI focuses on one specific task or domain, while general AI can perform any intellectual task that a human can",
+      "General AI focuses on one specific task or domain, while narrow AI can perform any intellectual task that a human can",
+      "Narrow AI is a more advanced form of AI than general AI",
+      "General AI is a more advanced form of AI than narrow AI",
+    ],
+    answer:
+      "Narrow AI focuses on one specific task or domain, while general AI can perform any intellectual task that a human can",
+  },
+  {
+    question: "What is natural language processing (NLP)?",
+    options: [
+      "A branch of AI that focuses on teaching machines to understand and interpret human language",
+      "A form of machine learning that uses neural networks to classify text data",
+      "A type of deep learning that uses audio data as input",
+      "A technique for visualizing and understanding high-dimensional data",
+    ],
+    answer:
+      "A branch of AI that focuses on teaching machines to understand and interpret human language",
+  },
+  {
+    question: "What is reinforcement learning?",
+    options: [
+      "A type of machine learning where an agent learns to behave in an environment by performing certain actions and receiving rewards or punishments",
+      "A type of deep learning where a neural network is trained on unlabelled data",
+      "A type of machine learning where a decision tree is used to classify data",
+      "A technique for finding patterns and relationships in data",
+    ],
+    answer:
+      "A type of machine learning where an agent learns to behave in an environment by performing certain actions and receiving rewards or punishments",
+  },
+  {
+    question: "What is computer vision?",
+    options: [
+      "A field of AI that focuses on enabling machines to interpret and understand visual data from the world",
+      "A type of machine learning that uses graphs to represent data",
+      "A technique for analyzing text data to extract insights and patterns",
+      "A type of deep learning that uses audio data as input",
+    ],
+    answer:
+      "A field of AI that focuses on enabling machines to interpret and understand visual data from the world",
+  },
+  {
+    question: "What is a neural network?",
+    options: [
+      "A computational model that is inspired by the structure and function of the human brain",
+      "A type of machine learning algorithm that uses decision trees",
+      "A method for extracting patterns and insights from large datasets",
+      "A set of rules and procedures for solving complex problems",
+    ],
+    answer:
+      "A computational model that is inspired by the structure and function of the human brain",
+  },
 ];
 
 // Add the CORS headers

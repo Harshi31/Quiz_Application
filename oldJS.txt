@@ -8,33 +8,30 @@ const submitNow = document.querySelector(".submitNow");
 
 let userCorrectAnswer = 0,
   userWrongAnswer = 0;
-let apiData = [];
+let questionsData = []; // to store fetched questions data
 let currentQuestionIndex = 0;
-let questionsData;
-let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-let i = 0;
 
 // fetch questions data from API
 const fetchQuestions = async () => {
   try {
-    const response = await fetch("http://localhost:1000/AIQuestions");
-    /*     const response = await fetch(
-      "https://question-answer-eight.vercel.app/database-questions"
-    ); */
+    // const response = await fetch("http://localhost:4000/pythonQuestions");
+    const response = await fetch(
+      "https://python-server.vercel.app/pythonQuestions"
+    );
     if (!response.ok) {
       throw new Error("API request failed!");
     }
     const data = await response.json();
-    apiData = data;
-    displayQuestions(array[i]);
+    questionsData = data;
+    showQuestion(currentQuestionIndex);
   } catch (error) {
     console.error(error);
   }
 };
 
-//Displaying Questions
-const displayQuestions = (currentQuestionIndex) => {
-  const currentQuestion = apiData[currentQuestionIndex];
+// display current question on the webpage
+const showQuestion = (questionIndex) => {
+  const currentQuestion = questionsData[questionIndex];
   question.innerHTML = currentQuestion.question;
 
   // clear previous options
@@ -51,7 +48,7 @@ const displayQuestions = (currentQuestionIndex) => {
   });
 };
 
-//handle Option Click
+// handle option button click
 const handleOptionClick = (event) => {
   // remove active class from all options
 
@@ -64,25 +61,22 @@ const handleOptionClick = (event) => {
   selectedOption.classList.add("active");
 };
 
-optionContainer.forEach((option) => {
-  option.addEventListener("click", handleOptionClick);
-});
-
-//next questions:
-const nextBtn = document.querySelector(".submit");
-nextBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-  nextBtn.classList.add("animate");
+// handle form submission
+const handleFormSubmit = (event) => {
+  //Adding animation when clicking btn
+  submitBtn.classList.add("animate");
   setTimeout(() => {
-    nextBtn.classList.remove("animate");
+    submitBtn.classList.remove("animate");
   }, 600);
+
+  event.preventDefault();
   const userAnswer = document.querySelector(".option.active");
   if (!userAnswer) {
     alert("Please select an option!");
     return;
   }
   const userAnswerText = userAnswer.innerHTML.trim().toLowerCase();
-  const correctAnswerText = apiData[currentQuestionIndex].answer
+  const correctAnswerText = questionsData[currentQuestionIndex].answer
     .trim()
     .toLowerCase();
   console.log(userAnswerText);
@@ -95,26 +89,20 @@ nextBtn.addEventListener("click", (event) => {
   currentQuestionIndex++;
   // move to the next question after 3 second
   setTimeout(() => {
-    if (currentQuestionIndex >= apiData.length) {
+    if (currentQuestionIndex >= questionsData.length) {
       result.innerHTML = `Quiz Completed! You scored ${userCorrectAnswer} out of ${questionsData.length}`;
     } else {
-      i++;
-      displayQuestions(i);
+      showQuestion(currentQuestionIndex);
       result.innerHTML = "";
     }
-  }, 400);
-});
+  }, 1000);
+};
 
-//Back button
-const backBtn = document.querySelector(".backBtn");
-backBtn.addEventListener("click", () => {
-  backBtn.classList.add("animate");
-  setTimeout(() => {
-    backBtn.classList.remove("animate");
-  }, 600);
-  i--;
-  displayQuestions(i);
+// add event listeners
+optionContainer.forEach((option) => {
+  option.addEventListener("click", handleOptionClick);
 });
+submitBtn.addEventListener("click", handleFormSubmit);
 
 //Submit Now
 submitNow.addEventListener("click", (e) => {
@@ -141,3 +129,5 @@ submitNow.addEventListener("click", (e) => {
 
 // fetch questions on page load
 fetchQuestions();
+
+//Adding animation

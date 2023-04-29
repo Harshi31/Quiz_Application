@@ -7,7 +7,7 @@
 }
 
 body {
-  background: deepskyblue;
+  background: #f9f6f6;
 }
 .quiz-container {
   text-align: center;
@@ -66,4 +66,19 @@ li {
 .back {
   display: flex;
   align-items: center;
+}
+
+/* For the new record box */
+.record {
+  text-align: left;
+  margin: 10px;
+}
+.record-container {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 20%;
+  position: absolute;
+  margin: 20px;
+  right: 0;
+  top: 0;
 }
